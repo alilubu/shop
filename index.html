@@ -1,393 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
-git 
+
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Furniture Shop</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-white text-gray-800 font-sans my-1.5 p-4">
 
-  <!-- Navbar -->
-  <nav class="flex items-center justify-between px-6 py-3 border-b-2 text-xs text-gray-600 flex-wrap gap-2 border-t-2 sticky top-0 z-50 bg-white">
-    <div class="flex gap-4 flex-wrap">
-      <a href="#" class="font-bold text-orange-500">HOME</a>
-      <a href="#" class=" font-sans font-bold hover:text-orange-500">FURNITURE</a>
-      <a href="#" class="  font-sans font-bold hover:text-orange-500">ALL PRODUCTS</a>
-      <a href="#" class="  font-sans font-bold hover:text-orange-500">SHOP</a>
-      <a href="#" class="  font-sans font-bold hover:text-orange-500">MOBILE</a>
-      <a href="#" class=" font-sans font-bold hover:text-orange-500">OFFER</a>
-      <a href="#" class=" font-sans font-bold hover:text-orange-500">DEAL</a>
-      <a href="#" class=" font-sans font-bold hover:text-orange-500">BLOG</a>
-      <a href="#" class=" font-sans font-bold hover:text-orange-500">CONTACT US</a>
-      <a href="#" class=" font-sans font-bold hover:text-orange-500">CUSTOM MENU</a>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="cursor-pointer mx-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></span>
-      <span class="cursor-pointer"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></span>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <nav
+        class="flex items-center justify-between px-6 py-3 border-b-2 text-xs text-gray-600 flex-wrap gap-2 border-t-2 sticky top-0 z-50 bg-white">
+        <div class="flex gap-4 flex-wrap">
+            <a href="#" class="font-bold text-orange-500">HOME</a>
+            <a href="#" class=" font-sans font-bold hover:text-orange-500">FURNITURE</a>
+            <a href="#" class="  font-sans font-bold hover:text-orange-500">ALL PRODUCTS</a>
+            <a href="#" class="  font-sans font-bold hover:text-orange-500">SHOP</a>
+            <a href="#" class="  font-sans font-bold hover:text-orange-500">MOBILE</a>
+            <a href="#" class=" font-sans font-bold hover:text-orange-500">OFFER</a>
+            <a href="#" class=" font-sans font-bold hover:text-orange-500">DEAL</a>
+            <a href="#" class=" font-sans font-bold hover:text-orange-500">BLOG</a>
+            <a href="#" class=" font-sans font-bold hover:text-orange-500">CONTACT US</a>
+            <a href="#" class=" font-sans font-bold hover:text-orange-500">CUSTOM MENU</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="cursor-pointer mx-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg></span>
+            <span class="cursor-pointer"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                    </path>
+                </svg></span>
+        </div>
+    </nav>
 
 
 
 
 
 
-  <!-- Hero Section -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-2 p-4">
-    <!-- Left: Main Hero -->
-    <div
-      class="relative bg-[#f9f8f9] rounded-lg overflow-hidden flex flex-col items-center justify-center p-8 min-h-[260px]">
-      <span
-        class="absolute top-36 right-32 bg-yellow-400 text-white font-bold rounded-full w-20 h-20 flex items-center justify-center text-sm">-30%</span>
-      <img src="./c07a5346-70b5-463e-aacf-26cee2848cf7.png" alt="sofa" class="w-[35rem] object-contain mb-4 " />
-      <p class="text-orange-500 font-semibold tracking-widest text-3xl">FURNITURE</p>
-      <h2 class="text-6xl font-bold text-gray-800">WOOD STYLE</h2>
-      <button class="bg-white mt-4 border border-gray-400 px-6 py-1 text-xs hover:bg-gray-200 transition">SHOP
-        NOW</button>
-      <div class="flex gap-2 mt-3">
-        <span class="w-3 h-3 bg-red-500 rounded-sm inline-block"></span>
-        <span class="w-3 h-3 bg-gray-300 rounded-sm inline-block"></span>
-        <span class="w-3 h-3 bg-gray-300 rounded-sm inline-block"></span>
-      </div>
-    </div>
-
-
-
-
-
-    <!-- Right: Side banners -->
-    <div class="grid grid-rows-2 gap-2">
-      <div class="bg-amber-50 rounded-lg overflow-hidden">
-        <img class=" max-h-64 w-full" src="https://fama.ir/wp-content/uploads/2023/01/version-01.webp " alt="room"
-          class="w-full h-full object-cover max-h-36" />
-      </div>
-
-      <div class="grid grid-cols-2 gap-2">
-        <div class="bg-purple-50 rounded-lg flex items-center justify-center p-3 text-center">
-          <div>
-            <img src="https://fama.ir/wp-content/uploads/2023/01/01-6.webp" alt="sofa italia"
-              class="w-full object-contain max-h-44" />
-            <div class="mb-6">
-              <span class="font-light text-4xl text-gray-800 tracking-wide">SOFA</span>
-              <span class="font-extrabold text-4xl text-blue-400 tracking-wide">ITALIA</span>
+    <!-- Hero Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-2 p-4">
+        <!-- Left: Main Hero -->
+        <div
+            class="relative bg-[#f9f8f9] rounded-lg overflow-hidden flex flex-col items-center justify-center p-8 min-h-[260px]">
+            <span
+                class="absolute top-36 right-32 bg-yellow-400 text-white font-bold rounded-full w-20 h-20 flex items-center justify-center text-sm">-30%</span>
+            <img src="./c07a5346-70b5-463e-aacf-26cee2848cf7.png" alt="sofa" class="w-[35rem] object-contain mb-4 " />
+            <p class="text-orange-500 font-semibold tracking-widest text-3xl">FURNITURE</p>
+            <h2 class="text-6xl font-bold text-gray-800">WOOD STYLE</h2>
+            <button class="bg-white mt-4 border border-gray-400 px-6 py-1 text-xs hover:bg-gray-200 transition">SHOP
+                NOW</button>
+            <div class="flex gap-2 mt-3">
+                <span class="w-3 h-3 bg-red-500 rounded-sm inline-block"></span>
+                <span class="w-3 h-3 bg-gray-300 rounded-sm inline-block"></span>
+                <span class="w-3 h-3 bg-gray-300 rounded-sm inline-block"></span>
             </div>
-          </div>
         </div>
 
-        <div class="relative bg-red-50 rounded-lg flex items-center justify-center p-3">
-          <span class="absolute top-[6.5rem] right-[3.5rem] bg-[#fefefe] shadow-[_-1px_7px_7px_1px_#c49860] text-[#c49860] rounded-full px-1 text-[25px] flex items-center justify-center text-center w-[70px] h-[70px]">-15%</span>
-          <img src="https://fama.ir/wp-content/uploads/2021/12/Chair-Roza-1-1-300x361.webp" alt="chair"
-            class="object-contain max-h-44" />
+
+
+
+
+        <!-- Right: Side banners -->
+        <div class="grid grid-rows-2 gap-2">
+            <div class="bg-amber-50 rounded-lg overflow-hidden">
+                <img class=" max-h-64 w-full" src="https://fama.ir/wp-content/uploads/2023/01/version-01.webp "
+                    alt="room" class="w-full h-full object-cover max-h-36" />
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+                <div class="bg-purple-50 rounded-lg flex items-center justify-center p-3 text-center">
+                    <div>
+                        <img src="https://fama.ir/wp-content/uploads/2023/01/01-6.webp" alt="sofa italia"
+                            class="w-full object-contain max-h-44" />
+                        <div class="mb-6">
+                            <span class="font-light text-4xl text-gray-800 tracking-wide">SOFA</span>
+                            <span class="font-extrabold text-4xl text-blue-400 tracking-wide">ITALIA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-red-50 rounded-lg flex items-center justify-center p-3">
+                    <span
+                        class="absolute top-[6.5rem] right-[3.5rem] bg-[#fefefe] shadow-[_-1px_7px_7px_1px_#c49860] text-[#c49860] rounded-full px-1 text-[25px] flex items-center justify-center text-center w-[70px] h-[70px]">-15%</span>
+                    <img src="https://fama.ir/wp-content/uploads/2021/12/Chair-Roza-1-1-300x361.webp" alt="chair"
+                        class="object-contain max-h-44" />
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Tab Section -->
+    <section class="px-4 py-6">
+        <div class="flex gap-6 border-b mb-6 text-sm font-semibold">
+            <button id="tab-latest" onclick="switchTab('latest')"
+                class="pb-2 border-b-2 border-orange-500 text-orange-500">LATEST</button>
+            <button id="tab-saleoff" onclick="switchTab('saleoff')"
+                class="pb-2 border-b-2 border-transparent text-gray-500 hover:text-orange-500">SALE OFF</button>
+            <button id="tab-bestsale" onclick="switchTab('bestsale')"
+                class="pb-2 border-b-2 border-transparent text-gray-500 hover:text-orange-500">BEST SALE</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
+
+        <div class="text-center mt-6">
+            <button id="load-more-btn"
+                class="border border-gray-300 px-8 py-2 text-xs hover:bg-gray-100 transition">LOAD MORE ITEMS</button>
+        </div>
+
+    </section>
+    <!-- Advertising section -->
+
+    <section id="Advertising"
+        class="w-full  mx-auto bg-[#eeeeee] flex flex-col md:flex-row items-center overflow-hidden">
+
+        <div class="w-full flex justify-center md:w-6/12 h-64 md:h-80">
+            <img src="https://www.thecoolector.com/wp-content/uploads/2015/04/4dd77f48168c6f646cfa008293cdcf8d.jpg"
+                class="w-2/3 h-full  object-center md:w-3/6 " alt="wooden chair">
+        </div>
+
+        <div id="Advertising-text"
+            class="w-full p-6 flex flex-col gap-3  md:w-6/12  md:py-10 md:pl-0 md:pr-10 sm:pl-10">
+
+            <p id="ad-category" class="text-[11px] tracking-wider text-gray-500 font-bold uppercase">
+                NEW PRODUCTS
+            </p>
+
+            <h2 id="Advertising-title" class="text-3xl font-bold text-black">
+                AXEL - STOOL
+            </h2>
+
+            <p id="Advertising-desc" class="text-[13px] text-gray-500 leading-normal max-w-sm">
+                When it comes to design, simplicity is always a good place to start in terms
+                of ensuring functionality and aesthetic appeal and this is undoubtedly
+                something which can be applied to this AXEL Stool.
+            </p>
+
+            <button id="Advertising-buy-now"
+                class="bg-black text-white px-6 py-2 w-fit text-[12px] font-bold mt-2 hover:bg-gray-800 transition-all uppercase">
+                BUY NOW
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Suggest section -->
+
+    <section id="Suggest" class="mt-8 flex flex-col px-5 md:px-10">
+        <h3>SUGGEST COLLECTION</h3>
+
+        <div id="filter-container" class="flex items-center border-gray-200 py-4 mb-2 overflow-x-auto md:pl-4">
+
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer "
+                onclick="changeFilter('table')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('sofa')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('chair')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('table')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('table')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('table')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('table')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('table')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+            <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer"
+                onclick="changeFilter('table')">
+                <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
+                    class="w-14 h-14 object-contain mb-2" alt="category">
+                <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
+            </div>
+        </div>
+
+
+        <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 p-4">
+
+            <div class="group relative flex flex-col items-center cursor-pointer">
+                <!-- محفظه تصویر با بردر ظریف -->
+                <div
+                    class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
+
+                    <!-- لیبل Sale (قرمز) -->
+                    <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
+                            Sale
+                        </div>
+                    </div>
+
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTB3Ds-7IkDEYKrJYCFeGV2G4ylhnjzcDBMTSgPp4ue-SLMRXYI"
+                        class="w-4/5 h-4/5 object-contain" alt="product">
+                </div>
+
+                <!-- توضیحات محصول -->
+                <div class="text-center mt-4">
+                    <h3 class="text-sm text-gray-700">Modular Modern</h3>
+                    <p class="font-bold text-black mt-1">$ 540.00 <span
+                            class="text-gray-400 font-normal line-through text-xs ml-1">$ 600.00</span></p>
+                </div>
+            </div>
+            <div class="group relative flex flex-col items-center cursor-pointer">
+                <div
+                    class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
+
+                    <!-- لیبل New (آبی) -->
+                    <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
+                            New
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
+                            Sale
+                        </div>
+                    </div>
+
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTB3Ds-7IkDEYKrJYCFeGV2G4ylhnjzcDBMTSgPp4ue-SLMRXYI"
+                        class="w-4/5 h-4/5 object-contain" alt="product">
+                </div>
+
+                <div class="text-center mt-4">
+                    <h3 class="text-sm text-gray-700">Modular Modern</h3>
+                    <p class="font-bold text-black mt-1">$ 540.00</p>
+                </div>
+            </div>
+            <div class="group relative flex flex-col items-center cursor-pointer">
+                <div
+                    class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
+
+                    <!-- لیبل New (آبی) -->
+                    <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
+                            New
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
+                            Sale
+                        </div>
+                    </div>
+
+                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR-2F-Xhlejqnj8zeblFw8yMJoM1P_zahvx65JDsu8eqSJwc2H0"
+                        class="w-4/5 h-4/5 object-contain" alt="product">
+                </div>
+
+                <div class="text-center mt-4">
+                    <h3 class="text-sm text-gray-700">Modular Modern</h3>
+                    <p class="font-bold text-black mt-1">$ 540.00</p>
+                </div>
+            </div>
+            <div class="group relative flex flex-col items-center cursor-pointer">
+                <div
+                    class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
+
+                    <!-- لیبل New (آبی) -->
+                    <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
+                            New
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
+                            Sale
+                        </div>
+                    </div>
+
+                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR-2F-Xhlejqnj8zeblFw8yMJoM1P_zahvx65JDsu8eqSJwc2H0"
+                        class="w-4/5 h-4/5 object-contain" alt="product">
+                </div>
+
+                <div class="text-center mt-4">
+                    <h3 class="text-sm text-gray-700">Modular Modern</h3>
+                    <p class="font-bold text-black mt-1">$ 540.00</p>
+                </div>
+            </div>
+            <div class="group relative flex flex-col items-center cursor-pointer">
+                <div
+                    class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
+
+                    <!-- لیبل New (آبی) -->
+                    <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
+                            New
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
+                        <div
+                            class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
+                            Sale
+                        </div>
+                    </div>
+
+                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR-2F-Xhlejqnj8zeblFw8yMJoM1P_zahvx65JDsu8eqSJwc2H0"
+                        class="w-4/5 h-4/5 object-contain" alt="product">
+                </div>
+
+                <div class="text-center mt-4">
+                    <h3 class="text-sm text-gray-700">Modular Modern</h3>
+                    <p class="font-bold text-black mt-1">$ 540.00</p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section id="Advertising-discount" class="grid grid-cols-1 mt-10  mb-10 md:grid-cols-12 gap-6">
+
+        <!-- بنر بزرگ سمت چپ (50% عرض در دسکتاپ) -->
+        <div class="md:col-span-6 relative group overflow-hidden h-[300px] md:h-[400px]">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMLZbnb7toU4WtYUn8V7FlyPvjOPbPGEBqjhNzQNyh5BvT7WtE"
+                class="w-full h-full transition-transform duration-500 group-hover:scale-105" alt="Banner 1">
+
+            <!-- باکس قرمز روی تصویر -->
+            <div class="absolute top-10 left-6 bg-red-600/90 text-white p-6 max-w-[280px]">
+                <div class="flex items-start gap-2">
+                    <span class="text-5xl font-bold">-20%</span>
+                    <div class="text-[10px] uppercase leading-tight mt-1">
+                        Free Shipping 10km<br>
+                        12 Month Warranty<br>
+                        3 Day Trial
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold mt-4 tracking-wider">FOR OUR MEMBER</h2>
+            </div>
+        </div>
+
+        <!-- بنر وسط (25% عرض در دسکتاپ) -->
+        <div class="md:col-span-3 relative group overflow-hidden h-[300px] md:h-[400px]">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMLZbnb7toU4WtYUn8V7FlyPvjOPbPGEBqjhNzQNyh5BvT7WtE"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="Banner 2">
+
+            <div class="absolute inset-0 p-6 flex flex-col justify-start">
+                <p class="text-gray-600 font-semibold tracking-widest uppercase text-sm">Living Room</p>
+                <h3 class="text-3xl font-bold text-gray-800">FURNITURE</h3>
+                <span class="text-red-600 text-5xl font-black mt-2">-40%</span>
+                <button
+                    class="mt-6 bg-black text-white px-4 py-2 text-xs font-bold w-fit flex items-center gap-2 hover:bg-gray-800">
+                    BUY NOW <span
+                        class="border border-white rounded-full w-4 h-4 flex items-center justify-center">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- بنر سمت راست (25% عرض در دسکتاپ) -->
+        <div class="md:col-span-3 relative group overflow-hidden h-[300px] md:h-[400px]">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnSWuL9YPlbll3ow-3VBbabrjN2p6VEZPT4BBM--xvlQ&s"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="Banner 3">
+
+            <div class="absolute inset-0 p-6 flex flex-col justify-center text-white">
+                <p class="tracking-widest uppercase text-sm opacity-90">Outdoor</p>
+                <h3 class="text-3xl font-bold">FURNITURE</h3>
+                <p class="text-sm mt-1 opacity-80">Free delivery on weekend</p>
+            </div>
+        </div>
+
+    </section>
+    <!--  Most viewed section -->
+    <div class=" mx-auto max-w-7xl ">
+
+        <!-- most veiwed part start with a horizontal line and 2 buttons  -->
+        <div class="flex flex-row max-w-7xl mx-auto items-center m-5 ">
+            <div>
+                <h1 class="text-xl font-bold whitespace-nowrap mr-4">MOST VIEWED</h1>
+            </div>
+            <div class="  flex-grow border-t  border-gray-300 "></div>
+            <button id="ad-slider-left"
+                class="w-8 h-8 flex items-center justify-center border ml-4 mr-2 border-gray-200 hover:bg-gray-50 transition-colors">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+            </button>
+
+            <button id="ad-slider-right"
+                class="w-8 h-8 flex items-center justify-center border border-gray-200 hover:bg-gray-50 transition-colors">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- slider contents -->
+        <div class="grid justify-center"></div>
+        <div id="most-viewed-slider" class="grid grid-cols-4 gap-2 mb-2">
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex items-center">
+                <img src="https://fotros.co/wp-content/uploads/2025/12/%D8%B5%D9%86%D8%AF%D9%84%DB%8C-m111-%D9%85%D8%AF%D8%B1%D9%86-%D8%B5%D9%86%D8%B9%D8%AA-300x300.webp"
+                    alt="Office chair" class="w-1/3 border ">
+                <div class="flex flex-col ml-2 gap-y-1">
+                    <p class="text-xs">Modular moderns</p>
+                    <div class="flex gap-x-2 text-[20px] font-bold "><span>$</span><span
+                            id="product-price">540.00</span></div>
+                    <div class="flex gap-1 hover:cursor-pointer">
+                        <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="text-gray-600 hover:text-black transition-colors">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg></span>
+                        <p id="slider-add-to-cart" class="text-xs ">Add to cart</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--LATEST POSTS part started with horizontal -->
+        <div class="flex flex-row max-w-7xl mx-auto items-center m-5 ">
+            <div>
+                <h1 class="text-xl font-bold whitespace-nowrap mr-4">LATEST POSTS</h1>
+            </div>
+            <div class="  flex-grow border-t  border-gray-300 "></div>
+            <button id="ad-slider-left"
+                class="w-8 h-8 flex items-center justify-center border ml-4 mr-2 border-gray-200 hover:bg-gray-50 transition-colors">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+            </button>
+
+            <button id="ad-slider-right"
+                class="w-8 h-8 flex items-center justify-center border border-gray-200 hover:bg-gray-50 transition-colors">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </button>
+        </div>
+        <div id="latest-view-container" class="flex grid-row justify-between mb-10 mt-10">
+            <div flex flex-col>
+                <img src="https://d23gsxgd1jkce2.cloudfront.net/eyJlZGl0cyI6eyJyZXNpemUiOnsiaGVpZ2h0IjoyNjksImJhY2tncm91bmQiOiJ3aGl0ZSIsIndpZHRoIjozNTgsImZpdCI6ImNvbnRhaW4ifX0sImJ1Y2tldCI6IndhbnRkb250d2FudCIsImtleSI6InByb2R1Y3RzL0FSSTIwNDI2LzEyOTcgKDEpLmpwZyJ9"
+                    class="max-w-[350px] min-h-[260px]" alt="">
+                <div class="flex mt-1">
+                    <div class="border p-2 max-w-fit max-h-fit">
+                        <p id="day-date-num" class=" font-bold !text-center">08</p>
+                        <p id="month-date-name">JAN</p>
+                    </div>
+                    <div class="ml-2 gap-5">
+                        <p id="latest-viewed-name" class="text-red-500 text-xs font-bold">Chair furniture</p>
+                        <p id="latest-viewed-title" class="text-sm text-black font-bold">Lorem ipsum dolor sit amet.</p>
+                        <p id="latest-viewed-desc" class="text-sm text-gray-500 max-w-[305px]">Lorem ipsum dolor sit
+                            amet,
+                            consectetur
+                            adipisicing elit. Quidem, deserunt! Suscipit, earum distinctio. Doloribus, earum. At non
+                            incidunt facilis nulla.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div flex flex-col>
+                <img src="https://qd.vc/wp-content/uploads/2022/03/cutchair.jpg" class="max-w-[350px] min-h-[260px]"
+                    alt="">
+                <div class="flex mt-1">
+                    <div class="border p-2 max-w-fit max-h-fit">
+                        <p id="day-date-num" class=" font-bold !text-center">08</p>
+                        <p id="month-date-name">JAN</p>
+                    </div>
+                    <div class="ml-2 gap-5">
+                        <p id="latest-viewed-name" class="text-red-500 text-xs font-bold">Chair furniture</p>
+                        <p id="latest-viewed-title" class="text-sm text-black font-bold">Lorem ipsum dolor sit amet.</p>
+                        <p id="latest-viewed-desc" class="text-sm text-gray-500 max-w-[305px]">Lorem ipsum dolor sit
+                            amet,
+                            consectetur
+                            adipisicing elit. Quidem, deserunt! Suscipit, earum distinctio. Doloribus, earum. At non
+                            incidunt facilis nulla.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div flex flex-col>
+                <img src="https://www.ftholdingsltd.com/wp-content/uploads/2020/11/Domotex_2020_3_Forestry-Timber.jpg"
+                    class="max-w-[350px] min-h-[260px]" alt="">
+                <div class="flex mt-1">
+                    <div class="border p-2 max-w-fit max-h-fit">
+                        <p id="day-date-num" class=" font-bold !text-center">08</p>
+                        <p id="month-date-name">JAN</p>
+                    </div>
+                    <div class="ml-2 gap-5">
+                        <p id="latest-viewed-name" class="text-red-500 text-xs font-bold">Chair furniture</p>
+                        <p id="latest-viewed-title" class="text-sm text-black font-bold">Lorem ipsum dolor sit amet.</p>
+                        <p id="latest-viewed-desc" class="text-sm text-gray-500 max-w-[305px]">Lorem ipsum dolor sit
+                            amet,
+                            consectetur
+                            adipisicing elit. Quidem, deserunt! Suscipit, earum distinctio. Doloribus, earum. At non
+                            incidunt facilis nulla.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </section>
-
-  <!-- Tab Section -->
-  <section class="px-4 py-6">
-    <div class="flex gap-6 border-b mb-6 text-sm font-semibold">
-      <button id="tab-latest" onclick="switchTab('latest')"
-        class="pb-2 border-b-2 border-orange-500 text-orange-500">LATEST</button>
-      <button id="tab-saleoff" onclick="switchTab('saleoff')"
-        class="pb-2 border-b-2 border-transparent text-gray-500 hover:text-orange-500">SALE OFF</button>
-      <button id="tab-bestsale" onclick="switchTab('bestsale')"
-        class="pb-2 border-b-2 border-transparent text-gray-500 hover:text-orange-500">BEST SALE</button>
+    </div>
     </div>
 
-    <!-- Products Grid -->
-    <div id="products" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
-
-    <div class="text-center mt-6">
-      <button id="load-more-btn" class="border border-gray-300 px-8 py-2 text-xs hover:bg-gray-100 transition">LOAD MORE ITEMS</button>
-    </div>
-
-  </section>
- <!-- Advertising section -->
-
- <section id="Advertising"
- class="w-full  mx-auto bg-[#eeeeee] flex flex-col md:flex-row items-center overflow-hidden">
-
- <div class="w-full flex justify-center md:w-6/12 h-64 md:h-80">
-     <img src="https://www.thecoolector.com/wp-content/uploads/2015/04/4dd77f48168c6f646cfa008293cdcf8d.jpg"
-         class="w-2/3 h-full  object-center md:w-3/6 " alt="wooden chair">
- </div>
-
- <div id="Advertising-text"
-     class="w-full p-6 flex flex-col gap-3  md:w-6/12  md:py-10 md:pl-0 md:pr-10 sm:pl-10">
-
-     <p id="ad-category" class="text-[11px] tracking-wider text-gray-500 font-bold uppercase">
-         NEW PRODUCTS
-     </p>
-
-     <h2 id="Advertising-title" class="text-3xl font-bold text-black">
-         AXEL - STOOL
-     </h2>
-
-     <p id="Advertising-desc" class="text-[13px] text-gray-500 leading-normal max-w-sm">
-         When it comes to design, simplicity is always a good place to start in terms
-         of ensuring functionality and aesthetic appeal and this is undoubtedly
-         something which can be applied to this AXEL Stool.
-     </p>
-
-     <button id="Advertising-buy-now"
-         class="bg-black text-white px-6 py-2 w-fit text-[12px] font-bold mt-2 hover:bg-gray-800 transition-all uppercase">
-         BUY NOW
-     </button>
-
- </div>
-</section>
-
-<!-- Suggest section -->
-
-<section id="Suggest" class="mt-8 flex flex-col px-5 md:px-10">
- <h3>SUGGEST COLLECTION</h3>
-
-<div id="filter-container" class="flex items-center border-gray-200 py-4 mb-2 overflow-x-auto md:pl-4">
-
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer " onclick="changeFilter('table')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('sofa')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('chair')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('table')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('table')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('table')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('table')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('table')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
-     <div class="border p-2 flex flex-col items-center min-w-[80px] md:p-4 xl:px-10 cursor-pointer" onclick="changeFilter('table')">
-         <img src="https://static.esam.ir/sell/itemImages/177751/33364989_1779546936_213_thsm.jpg"
-             class="w-14 h-14 object-contain mb-2" alt="category">
-         <span class="text-[10px] text-gray-500 uppercase text-center">Outdoor table</span>
-     </div>
- </div>
-
-
- <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 p-4">
-
-     <div class="group relative flex flex-col items-center cursor-pointer">
-         <!-- محفظه تصویر با بردر ظریف -->
-         <div
-             class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
-
-             <!-- لیبل Sale (قرمز) -->
-             <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
-                     Sale
-                 </div>
-             </div>
-
-             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTB3Ds-7IkDEYKrJYCFeGV2G4ylhnjzcDBMTSgPp4ue-SLMRXYI"
-                 class="w-4/5 h-4/5 object-contain" alt="product">
-         </div>
-
-         <!-- توضیحات محصول -->
-         <div class="text-center mt-4">
-             <h3 class="text-sm text-gray-700">Modular Modern</h3>
-             <p class="font-bold text-black mt-1">$ 540.00 <span
-                     class="text-gray-400 font-normal line-through text-xs ml-1">$ 600.00</span></p>
-         </div>
-     </div>
-     <div class="group relative flex flex-col items-center cursor-pointer">
-         <div
-             class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
-
-             <!-- لیبل New (آبی) -->
-             <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
-                     New
-                 </div>
-             </div>
-             <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
-                     Sale
-                 </div>
-             </div>
-
-             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTB3Ds-7IkDEYKrJYCFeGV2G4ylhnjzcDBMTSgPp4ue-SLMRXYI"
-                 class="w-4/5 h-4/5 object-contain" alt="product">
-         </div>
-
-         <div class="text-center mt-4">
-             <h3 class="text-sm text-gray-700">Modular Modern</h3>
-             <p class="font-bold text-black mt-1">$ 540.00</p>
-         </div>
-     </div>
-     <div class="group relative flex flex-col items-center cursor-pointer">
-         <div
-             class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
-
-             <!-- لیبل New (آبی) -->
-             <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
-                     New
-                 </div>
-             </div>
-             <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
-                     Sale
-                 </div>
-             </div>
-
-             <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR-2F-Xhlejqnj8zeblFw8yMJoM1P_zahvx65JDsu8eqSJwc2H0"
-                 class="w-4/5 h-4/5 object-contain" alt="product">
-         </div>
-
-         <div class="text-center mt-4">
-             <h3 class="text-sm text-gray-700">Modular Modern</h3>
-             <p class="font-bold text-black mt-1">$ 540.00</p>
-         </div>
-     </div>
-     <div class="group relative flex flex-col items-center cursor-pointer">
-         <div
-             class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
-
-             <!-- لیبل New (آبی) -->
-             <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
-                     New
-                 </div>
-             </div>
-             <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
-                     Sale
-                 </div>
-             </div>
-
-             <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR-2F-Xhlejqnj8zeblFw8yMJoM1P_zahvx65JDsu8eqSJwc2H0"
-                 class="w-4/5 h-4/5 object-contain" alt="product">
-         </div>
-
-         <div class="text-center mt-4">
-             <h3 class="text-sm text-gray-700">Modular Modern</h3>
-             <p class="font-bold text-black mt-1">$ 540.00</p>
-         </div>
-     </div>
-     <div class="group relative flex flex-col items-center cursor-pointer">
-         <div
-             class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
-
-             <!-- لیبل New (آبی) -->
-             <div class="absolute top-0 left-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-blue-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -left-6 w-24 -rotate-45">
-                     New
-                 </div>
-             </div>
-             <div class="absolute top-0 right-0 overflow-hidden w-16 h-16">
-                 <div
-                     class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
-                     Sale
-                 </div>
-             </div>
-
-             <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR-2F-Xhlejqnj8zeblFw8yMJoM1P_zahvx65JDsu8eqSJwc2H0"
-                 class="w-4/5 h-4/5 object-contain" alt="product">
-         </div>
-
-         <div class="text-center mt-4">
-             <h3 class="text-sm text-gray-700">Modular Modern</h3>
-             <p class="font-bold text-black mt-1">$ 540.00</p>
-         </div>
-     </div>
- </div>
-
-
-</section>
-<section id="Advertising-discount" class="grid grid-cols-1 mt-10  mb-10 md:grid-cols-12 gap-6">
-
- <!-- بنر بزرگ سمت چپ (50% عرض در دسکتاپ) -->
- <div class="md:col-span-6 relative group overflow-hidden h-[300px] md:h-[400px]">
-     <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMLZbnb7toU4WtYUn8V7FlyPvjOPbPGEBqjhNzQNyh5BvT7WtE"
-         class="w-full h-full transition-transform duration-500 group-hover:scale-105" alt="Banner 1">
-
-     <!-- باکس قرمز روی تصویر -->
-     <div class="absolute top-10 left-6 bg-red-600/90 text-white p-6 max-w-[280px]">
-         <div class="flex items-start gap-2">
-             <span class="text-5xl font-bold">-20%</span>
-             <div class="text-[10px] uppercase leading-tight mt-1">
-                 Free Shipping 10km<br>
-                 12 Month Warranty<br>
-                 3 Day Trial
-             </div>
-         </div>
-         <h2 class="text-2xl font-bold mt-4 tracking-wider">FOR OUR MEMBER</h2>
-     </div>
- </div>
-
- <!-- بنر وسط (25% عرض در دسکتاپ) -->
- <div class="md:col-span-3 relative group overflow-hidden h-[300px] md:h-[400px]">
-     <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMLZbnb7toU4WtYUn8V7FlyPvjOPbPGEBqjhNzQNyh5BvT7WtE"
-         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-         alt="Banner 2">
-
-     <div class="absolute inset-0 p-6 flex flex-col justify-start">
-         <p class="text-gray-600 font-semibold tracking-widest uppercase text-sm">Living Room</p>
-         <h3 class="text-3xl font-bold text-gray-800">FURNITURE</h3>
-         <span class="text-red-600 text-5xl font-black mt-2">-40%</span>
-         <button
-             class="mt-6 bg-black text-white px-4 py-2 text-xs font-bold w-fit flex items-center gap-2 hover:bg-gray-800">
-             BUY NOW <span
-                 class="border border-white rounded-full w-4 h-4 flex items-center justify-center">→</span>
-         </button>
-     </div>
- </div>
-
- <!-- بنر سمت راست (25% عرض در دسکتاپ) -->
- <div class="md:col-span-3 relative group overflow-hidden h-[300px] md:h-[400px]">
-     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnSWuL9YPlbll3ow-3VBbabrjN2p6VEZPT4BBM--xvlQ&s"
-         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-         alt="Banner 3">
-
-     <div class="absolute inset-0 p-6 flex flex-col justify-center text-white">
-         <p class="tracking-widest uppercase text-sm opacity-90">Outdoor</p>
-         <h3 class="text-3xl font-bold">FURNITURE</h3>
-         <p class="text-sm mt-1 opacity-80">Free delivery on weekend</p>
-     </div>
- </div>
-
-</section>
-   
 
 </body>
 <script src="script.js"></script>
+
 </html>
