@@ -1,5 +1,26 @@
 const detailsPage = document.querySelector("#details--page");
 
+// rating stars coloring
+async function displayRatingStars(clickedCartId) {
+    const filledColor = 'gold';
+    const emptyColor = '#ccc';
+    const response = await fetch(`http://localhost:3000/products/${clickedCartId}`);
+    const productData = await response.json();
+    const rate = productData.rate;
+    for (let i = 1; i <= 5; i++) {
+        const starElement = document.getElementById(`star${i}`);
+        if (starElement) {
+            if (i <= rate) {
+                starElement.style.fill = filledColor;
+            } else {
+                starElement.style.fill = emptyColor;
+            }
+        }
+    }
+}
+
+
+// local storage cart
 function updateCart(productData, change) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -25,12 +46,11 @@ function minusButton(productData) {
     return updateCart(productData, -1);
 }
 
-
 function plusButton(productData) {
     return updateCart(productData, 1);
 }
 
-
+// render page 
 async function renderDetailsPage(clickedCartId) {
     detailsPage.innerHTML = "";
     const response = await fetch(`http://localhost:3000/products/${clickedCartId}`);
@@ -40,7 +60,7 @@ async function renderDetailsPage(clickedCartId) {
             <!-- page address -->
             <div class="mt-4 ml-4">
                 <p class="flex flex-row items-center self-start">
-                    <a href="../../index.html"><svg id="homeIcon" xmlns="http://www.w3.org/2000/svg" height="14px"
+                    <a href="../../index.html"><svg id="homeIcon" class="hover:fill-[#f97316] hover:bg-[#f9731665]" xmlns="http://www.w3.org/2000/svg" height="14px"
                             viewBox="0 -960 960 960" width="14px" fill="#1f1f1f">
                             <path
                                 d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
@@ -49,7 +69,7 @@ async function renderDetailsPage(clickedCartId) {
             </div>
 
             <!-- product details -->
-            <div class="flex flex-col p-4 gap-2  md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 lg:grid-cols-3">
+            <div class="flex flex-col p-4 gap-2  md:grid md:grid-cols-2 md:grid-rows-2 md:grid-rows-[auto_auto] md:gap-4 lg:grid-cols-3">
                 <!-- left part in lg -->
                 <div class="flex flex-col justify-center items-center gap-2  md:col-span-1 md:row-span-1 lg:col-span-1">
                     <img class="w-full h-auto border-2 border-[#e5e7eb] "
@@ -68,27 +88,27 @@ async function renderDetailsPage(clickedCartId) {
                             <div>
                                 <span class="flex flex-row">
                                     <svg id="star1" xmlns="http://www.w3.org/2000/svg" height="24px"
-                                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        viewBox="0 -960 960 960" width="24px" >
                                         <path
                                             d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z" />
                                     </svg>
                                     <svg id="star2" xmlns="http://www.w3.org/2000/svg" height="24px"
-                                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        viewBox="0 -960 960 960" width="24px" >
                                         <path
                                             d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z" />
                                     </svg>
                                     <svg id="star3" xmlns="http://www.w3.org/2000/svg" height="24px"
-                                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        viewBox="0 -960 960 960" width="24px" >
                                         <path
                                             d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z" />
                                     </svg>
                                     <svg id="star4" xmlns="http://www.w3.org/2000/svg" height="24px"
-                                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        viewBox="0 -960 960 960" width="24px" >
                                         <path
                                             d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z" />
                                     </svg>
                                     <svg id="star5" xmlns="http://www.w3.org/2000/svg" height="24px"
-                                        viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+                                        viewBox="0 -960 960 960" width="24px" >
                                         <path
                                             d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z" />
                                     </svg>
@@ -176,20 +196,20 @@ async function renderDetailsPage(clickedCartId) {
                     class="h-fit border-2 border-[#e5e7eb] flex flex-col gap-0  md:col-span-2 md:row-span-1 lg:col-span-3 hover:border-[#000000]">
                     <!-- titles row -->
                     <div class="flex flex-row gap-0 border-b-2 ">
-                        <button
+                        <button id="table-product-desc"
                             class="p-1 text-l text-[#6a635a] font-bold md:px-6 md:py-4 hover:bg-[#000000] hover:border-[#000000] hover:text-[#fefefe]">PRODUCT
                             DESCRIPTION</button>
-                        <button
+                        <button id="table-reviews"
                             class="p-1 border-l-2 text-l text-[#6a635a] font-bold md:px-6 md:py-4 hover:bg-[#000000] hover:border-[#000000] hover:text-[#fefefe]">REVIEWS</button>
-                        <button
+                        <button id="table-tags"
                             class="p-1 border-x-2 text-l text-[#6a635a] font-bold md:px-6 md:py-4 hover:bg-[#000000] hover:border-[#000000] hover:text-[#fefefe]">PRODUCT
                             TAGS</button>
                     </div>
                     <!-- text box -->
                     <div class="flex flex-col gap-4 p-2">
-                        <p class="text-justify">${productData.description}</p>
-                        <p class="text-justify">${productData.reviews}</p>
-                        <p class="text-justify">${productData.tags}</p>
+                        <p id="table-product-desc-text" class="text-justify flex p-4">${productData.description}</p>
+                        <div id="table-reviews-text" class="text-justify hidden"><div id="reviews-container"></div> </div>
+                        <div id="table-tags-text" class="text-justify hidden"><div id="tags-container"></div></div>
                     </div>
                     <div class="hidden"></div>
                     <div class="hidden"></div>
@@ -201,11 +221,14 @@ async function renderDetailsPage(clickedCartId) {
             </div>
         </div>
         `
+    // stars function
+    displayRatingStars(clickedCartId);
+
+    // handel local storage cart
     const countInCart = document.querySelector("#count--inCart");
     const minusBtn = document.querySelector("#minus-btn");
     const plusBtn = document.querySelector("#plus-btn");
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let item = cart.find(i => i.id === productData.id);
     countInCart.innerHTML = item ? item.itemCount : 0;
 
@@ -219,13 +242,87 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
         const item = cart.find(i => i.id === productData.id);
         countInCart.innerHTML = item.itemCount;
     });
-    
 
-    const sizeSelect = document.querySelector("#size--select");
-    const colorSelect = document.querySelector("#color--select");
+    // handel table text
+    //reviews
+    async function displayReviews(productData) {
+        await productData;
+        const reviews = productData.reviews;
+        const reviewsContainer = document.getElementById("reviews-container");
+        reviewsContainer.classList.add("flex", "flex-row", "flex-wrap", "gap-4",);
+        reviewsContainer.innerHTML = "";
+        reviews.forEach(review => {
+            const reviewDiv = document.createElement("div");
+            reviewDiv.classList.add("flex", "flex-col", "gap-2", "p-4", "border", "rounded-lg", "mb-4","bg-[#f7f7f6]");
 
+            const nameElement = document.createElement("p");
+            nameElement.classList.add("font-semibold");
+            nameElement.innerHTML = review.name;
+            reviewDiv.appendChild(nameElement);
 
+            const commentElement = document.createElement("p");
+            commentElement.innerHTML = review.comment;
+            reviewDiv.appendChild(commentElement);
 
+            const dateElement = document.createElement("small");
+            dateElement.classList.add("text-gray-500");
+            dateElement.innerHTML = review.date;
+            reviewDiv.appendChild(dateElement);
+
+            reviewsContainer.appendChild(reviewDiv);
+
+        });
+    }
+    //tags 
+    async function displayTags(productData) {
+        await productData;
+        const tags = productData.tags;
+        const tagsContainer = document.getElementById("tags-container");
+        tagsContainer.classList.add("flex", "flex-row", "flex-wrap", "gap-4",);
+        tagsContainer.innerHTML = "";
+        tags.forEach(tag => {
+            const tagDiv = document.createElement("div");
+            tagDiv.classList.add("p-2", "border", "rounded-lg", "mb-4","bg-[#f7f7f6]");
+            tagDiv.innerHTML = tag;
+            tagsContainer.appendChild(tagDiv);
+        });
+    }
+    // handel table display
+    const tableDescription = document.querySelector("#table-product-desc");
+    const tableReviews = document.querySelector("#table-reviews");
+    const tableTags = document.querySelector("#table-tags");
+
+    const tableDescriptionText = document.querySelector("#table-product-desc-text");
+    const tableReviewsText = document.querySelector("#table-reviews-text");
+    const tableTagsText = document.querySelector("#table-tags-text");
+
+    tableDescription.addEventListener("click", () => {
+        tableDescriptionText.classList.add("flex");
+        tableDescriptionText.classList.remove("hidden");
+        tableReviewsText.classList.remove("flex");
+        tableReviewsText.classList.add("hidden");
+        tableTagsText.classList.remove("flex");
+        tableTagsText.classList.add("hidden");
+    })
+    tableReviews.addEventListener("click", () => {
+        tableReviewsText.classList.remove("hidden");
+        tableReviewsText.classList.add("flex");
+        tableDescriptionText.classList.remove("flex");
+        tableDescriptionText.classList.add("hidden");
+        tableTagsText.classList.remove("flex");
+        tableTagsText.classList.add("hidden");
+        displayReviews(productData);
+    })
+    tableTags.addEventListener("click", () => {
+        tableTagsText.classList.remove("hidden");
+        tableTagsText.classList.add("flex");
+        tableDescriptionText.classList.add("hidden");
+        tableDescriptionText.classList.remove("flex");
+        tableReviewsText.classList.remove("flex");
+        tableReviewsText.classList.add("hidden");
+        displayTags(productData);
+
+    })
 
 }
 
