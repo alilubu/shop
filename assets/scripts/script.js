@@ -170,6 +170,59 @@ function loadMore() {
     renderProducts();
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cartModal = document.querySelector("#cart-modal");
+    const cartItems = document.querySelector("#cart-items");
+    const cartTotal = document.querySelector("#cart-total");
+    const checkoutBtn = document.querySelector("#checkout-btn");
+
+    const navIcons = document.querySelectorAll("nav span.cursor-pointer");
+    const cartIcon = navIcons[1]; 
+    const searchIcon = navIcons[0]; 
+
+    
+    cartIcon?.addEventListener("click", () => {
+        cartModal.classList.toggle("hidden");
+        renderCart();
+    });
+
+    
+    searchIcon?.addEventListener("click", () => {
+        cartModal.classList.add("hidden");
+    });
+
+    function renderCart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cartItems.innerHTML = "";
+        let total = 0;
+
+        cart.forEach(item => {
+            total += item.itemPrice * item.itemCount;
+
+            cartItems.innerHTML += `
+                <div class="flex items-start gap-4 pb-4 border-b border-gray-100">
+                    <img src="${item.itemImage}" class="w-20 h-20 object-cover border border-gray-100">
+                    
+                    <div class="flex-grow pt-1">
+                        <h3 class="text-gray-700 text-sm leading-tight">${item.itemTitle}</h3>
+                        <p class="font-bold text-gray-900 mt-2">$ ${item.itemPrice.toFixed(2)}</p>
+                    </div>
+
+                    <button class="remove-item text-gray-400 hover:text-black text-lg" data-id="${item.id}">
+                        ×
+                    </button>
+                </div>
+            `;
+        });
+
+        cartTotal.textContent = `$ ${total.toFixed(2)}`;
+        
+        // اتصال مجدد ایونت حذف
+        document.querySelectorAll(".remove-item").forEach(btn => {
+            btn.addEventListener("click", (e) => removeItem(e.currentTarget.dataset.id));
+        });
+    }
 
 const loadMoreBtn = document.getElementById('load-more-btn');
 if (loadMoreBtn) {
@@ -177,3 +230,27 @@ if (loadMoreBtn) {
 }
 
 fetchProducts("latest");
+
+    function removeItem(id) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart = cart.filter(item => item.id != id);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCart();
+    }
+
+    const closeCartBtn = document.querySelector("#close-cart");
+
+    closeCartBtn?.addEventListener("click", () => {
+        cartModal.classList.add("hidden");
+    });
+
+    checkoutBtn?.addEventListener("click", () => {
+        window.location.href = "./assets/pages/cart.html";
+    });
+
+    renderCart();
+});
+
