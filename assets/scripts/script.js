@@ -228,3 +228,103 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCart();
 });
+
+// Amir hossein
+const productListAdvertising = document.getElementById("SUGGEST-VIEWED");
+
+async function getApiProductForAdvertising(filterName = "all") {
+  if (filterName === "all") {
+    const response = await fetch(
+      `http://localhost:3000/products?_page=0&_per_page=10`,
+    );
+    const result = await response.json();
+    let filteredProducts = result?.data;
+    advertisingRenderCart(filteredProducts);
+  } else {
+    const response = await fetch(
+      `http://localhost:3000/products?category=${filterName}&_page=0&_per_page=10`,
+    );
+    const result = await response.json();
+    let filteredProducts = result?.data;
+    advertisingRenderCart(filteredProducts);
+  }
+}
+
+function advertisingRenderCart(data) {
+  let finalHtml = "";
+
+  // ۱. ریست کردن موقعیت اسلایدر با هر بار رندر جدید
+  pos = 0;
+  productListAdvertising.style.left = "0%";
+
+  data.forEach((p) => {
+    const saleLabel = p.onOff
+      ? `
+<div class="absolute top-0 right-0 overflow-hidden w-16 h-16 z-10">
+<div class="bg-red-500 text-white text-[10px] font-bold uppercase text-center py-1 absolute top-2 -right-6 w-24 rotate-45">
+Sale
+</div>
+</div>
+`
+      : "";
+
+    finalHtml += `
+<a href="./assets/pages/productdetail.html?id=${p.id}" class="block group w-[92%] sm:w-1/3 lg:w-1/5 flex-shrink-0 px-2">
+<div class="relative flex flex-col items-center cursor-pointer w-full">
+<div class="relative w-full aspect-square border border-gray-100 flex justify-center items-center overflow-hidden bg-white">
+${saleLabel}
+<img src="${p.image}" class="w-4/5 h-4/5 object-contain transition-transform duration-300 group-hover:scale-105">
+</div>
+<div class="text-center mt-4">
+<h3 class="text-sm text-gray-700 line-clamp-1">${p.title}</h3>
+<p class="font-bold text-black mt-1"><span>$</span> ${p.price}</p>
+</div>
+</div>
+</a>
+`;
+  });
+
+  productListAdvertising.innerHTML = finalHtml;
+}
+
+function changeFilter(category) {
+  getApiProductForAdvertising(category);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  getApiProductForAdvertising();
+});
+
+const left = document.getElementById("advertising-slider-left");
+const right = document.getElementById("advertising-slider-right");
+
+// این متغیر باید بیرون باشد تا وضعیت حفظ شود
+let pos = 0;
+
+right.onclick = function () {
+  // پیدا کردن تعداد کل کارت‌های رندر شده در لحظه
+  const totalItems = productListAdvertising.children.length;
+
+  // در دسکتاپ ما ۵ تا ۵ تا رد می‌کنیم.
+  // اگر ۱۰ محصول داشته باشیم، فقط ۱ بار اجازه حرکت به راست داریم (limit = -100)
+  // فرمول: (تعداد کل تقسیم بر ۵) منهای ۱، ضربدر ۱۰۰
+  const limit = -(Math.ceil(totalItems / 5) - 1) * 100;
+
+  if (pos > limit) {
+    pos = pos - 100; // جابه‌جایی به اندازه یک صفحه کامل (۵ کارت)
+    productListAdvertising.style.left = pos + "%";
+  } else {
+    // اختیاری: اگر به انتها رسید دوباره به اول برگردد
+    pos = 0;
+    productListAdvertising.style.left = pos + "%";
+  }
+};
+
+left.onclick = function () {
+  if (pos < 0) {
+    pos = pos + 100; // برگشت به صفحه قبلی
+    productListAdvertising.style.left = pos + "%";
+  }
+};
+
+fetchProducts("latest");
