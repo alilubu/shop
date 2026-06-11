@@ -1,104 +1,179 @@
-/* <!-------------------------------------|NARGESS|-------------------------------------> */
- // 1. product list
-    const products = {
-      latest: [
-        { name: "Modular Modern", price: 540, old: 599, img: "https://fama.ir/wp-content/uploads/2021/12/Chair-Numa-Back-Textile-1.webp", badge: "new" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2024/10/IMG_2116-600x720.webp", badge: "sale" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2024/10/IMG_2110-600x721.webp" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2021/12/Linda-5-600x721.webp" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2024/11/mirror.webp" },
-        { name: "Modular Modern", price: 540, old: 599, img: "https://fama.ir/wp-content/uploads/2025/05/armada-console.webp" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2024/10/IMG_2103.webp", badge: "new" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2023/01/Bench-1.webp" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2024/10/IMG_6923-1.webp" },
-        { name: "Modular Modern", price: 540, img: "https://fama.ir/wp-content/uploads/2021/12/Bench-Pooneh-1.webp" },
-      ],
-      saleoff: [
-        { name: "Sale Item", price: 399, old: 599, img: "https://fama.ir/wp-content/uploads/2024/01/roza-counter-1.webp", badge: "sale" },
-        { name: "Sale Chair", price: 199, old: 350, img: "https://fama.ir/wp-content/uploads/2021/12/Bench-Orkideh-Back-Wood-1.webp", badge: "sale" },
-        { name: "Sale Sofa", price: 499, old: 700, img: "https://fama.ir/wp-content/uploads/2021/12/orkideh-21-11-300x361.webp", badge: "sale" },
-      ],
-      bestsale: [
-        { name: "Best Seller", price: 620, img: "https://fama.ir/wp-content/uploads/2021/12/Chair-Orkideh-1.webp" },
-        { name: "Top Pick", price: 480, img: "https://fama.ir/wp-content/uploads/2021/12/Elena-10-1-1.webp" },
-        { name: "Popular", price: 390, img: "https://fama.ir/wp-content/uploads/2023/01/01-7-1.webp" },
-      ]
+/* <!-------------------------------------|NEGRESS|-------------------------------------> */
+
+
+let allProducts = [];
+let visibleCount = 6;
+let currentTab = 'latest';
+let itemsCount = 6
+let allProductLength = 0
+async function fetchProducts(tab) {
+    if (tab === "latest") {
+        try {
+
+     const response = await fetch(`http://localhost:3000/products?_sort=-createDate&_page=0&_per_page=${itemsCount}`)
+            // if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+
+
+            allProducts = data?.data || [];
+            allProductLength = data?.items
+
+
+            renderProducts();
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            document.getElementById('products').innerHTML = '<p class="text-center text-red-500">خطا در بارگذاری محصولات.</p>';
+        }
+    } else if (tab === "saleoff") {
+        try {
+
+     const response = await fetch(`http://localhost:3000/products?onOff:eq=true&_page=0&_per_page=${itemsCount}`)
+            // if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+
+
+            allProducts = data?.data || [];
+
+            allProductLength = data?.items
+
+            renderProducts();
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            document.getElementById('products').innerHTML = '<p class="text-center text-red-500">خطا در بارگذاری محصولات.</p>';
+        }
+
+    } else if (tab === "bestsale") {
+        try {
+
+    const response = await fetch(`http://localhost:3000/products?_sort=-saleCount&_page=0&_per_page=${itemsCount}`)
+            // if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+
+
+            allProducts = data?.data || [];
+            allProductLength = data?.items
+
+
+            renderProducts();
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            document.getElementById('products').innerHTML = '<p class="text-center text-red-500">خطا در بارگذاری محصولات.</p>';
+        }
+    }
+}
+
+function changeTabRender(tab) {
+
+    fetchProducts(tab)
+}
+
+function mapProduct(p) {
+    return {
+        name: p.title,
+        price: p.price,
+        img: p.image,
+        old: null,
+        badge: null
     };
+}
 
-    // تعداد نمایش فعلی (پیش‌فرض ۶)
-  
-    let visibleCount = 6;
-    let currentTab = 'latest';
 
-//function of showing product
-    function renderProducts() {
-      const list = products[currentTab];
+function renderProducts() {
+    // let listToDisplay = [];
 
-      // “We only take the specified amount from the list.”
-      const itemsToShow = list.slice(0, visibleCount);
+    // if (currentTab === 'latest') {
 
-      const container = document.getElementById('products');
-      container.innerHTML = itemsToShow.map(p => `
+    //     listToDisplay = allProducts.slice(-6); 
+    // } else if (currentTab === 'saleoff') {
+
+    //     listToDisplay = allProducts.filter(p => p.price < 200);
+    // } else if (currentTab === 'bestsale') {
+
+    //     listToDisplay = [...allProducts]
+    //         .sort((a, b) => b.saleCount - a.saleCount)
+    //         .slice(0, 3);
+    // } else {
+
+    //     listToDisplay = allProducts;
+    // }
+
+
+    // const itemsToShow = listToDisplay.slice(0, visibleCount);
+
+    const container = document.getElementById('products');
+
+
+    if (allProducts.length === 0) {
+        container.innerHTML = '<p class="text-center text-gray-500">محصولی در این دسته‌بندی یافت نشد.</p>';
+        return;
+    }
+
+    container.innerHTML = allProducts.map(p => {
+        const mappedData = mapProduct(p);
+
+
+        let badgeHTML = '';
+        if (currentTab === 'saleoff') badgeHTML = '<span class="absolute top-2 left-2 bg-red-500 text-white text-[10px] px-1 rounded z-10">SALE</span>';
+        if (currentTab === 'latest') badgeHTML = '<span class="absolute top-2 left-2 bg-blue-500 text-white text-[10px] px-1 rounded z-10">NEW</span>';
+
+        return `
         <div class="relative group cursor-pointer">
-          ${p.badge === 'new' ? '<span class="absolute top-2 left-2 bg-blue-500 text-white text-[10px] px-1 rounded z-10">NEW</span>' : ''}
-          ${p.badge === 'sale' ? '<span class="absolute top-2 left-2 bg-red-500 text-white text-[10px] px-1 rounded z-10">SALE</span>' : ''}
+          ${badgeHTML}
           <div class="bg-gray-50 rounded-lg overflow-hidden mb-2 flex items-center justify-center h-36">
-            <img src="${p.img}" alt="${p.name}" class="object-contain h-full w-full p-2 group-hover:scale-105 transition-transform duration-300"/>
+            <img src="${mappedData.img}" alt="${mappedData.name}" class="object-contain h-full w-full p-2 group-hover:scale-105 transition-transform duration-300"/>
           </div>
-          <p class="text-xs font-semibold text-gray-700">${p.name}</p>
+          <p class="text-xs font-semibold text-gray-700">${mappedData.name}</p>
           <div class="flex gap-2 items-center mt-1">
-            <span class="text-sm font-bold text-gray-900">$${p.price}.00</span>
-            ${p.old ? `<span class="text-xs text-gray-400 line-through">$${p.old}.00</span>` : ''}
+            <span class="text-sm font-bold text-gray-900">$${mappedData.price}.00</span>
+            ${mappedData.old ? `<span class="text-xs text-gray-400 line-through">$${mappedData.old}.00</span>` : ''}
           </div>
         </div>
-      `).join('');
+      `;
+    }).join('');
 
-//“Hide the button if all items are displayed.”      
-      const btn = document.getElementById('load-more-btn');
-      if (visibleCount >= list.length) {
+
+    const btn = document.getElementById('load-more-btn');
+    btn.addEventListener("click", () => {
+        itemsCount += 6
+        fetchProducts(currentTab)
+    })
+    if (itemsCount > allProductLength) {
         btn.style.display = 'none';
-      } else {
+    } else {
         btn.style.display = 'inline-block';
-      }
     }
 
-    // “Function to change tabs”
-    function switchTab(tab) {
-      currentTab = tab;
-      visibleCount = 6; // ریست کردن تعداد نمایش برای تب جدید  “Reset display count for the new tab.”
-      
-      ['latest', 'saleoff', 'bestsale'].forEach(t => {
+}
+
+function switchTab(tab) {
+    currentTab = tab;
+    itemsCount = 6;
+
+
+    ['latest', 'saleoff', 'bestsale'].forEach(t => {
         const btn = document.getElementById('tab-' + t);
-        btn.classList.toggle('border-orange-500', t === tab);
-        btn.classList.toggle('text-orange-500', t === tab);
-        btn.classList.toggle('border-transparent', t !== tab);
-        btn.classList.toggle('text-gray-500', t !== tab);
-      });
-      renderProducts();
-    }
+        if (btn) {
+            btn.classList.toggle('border-orange-500', t === tab);
+            btn.classList.toggle('text-orange-500', t === tab);
+            btn.classList.toggle('border-transparent', t !== tab);
+            btn.classList.toggle('text-gray-500', t !== tab);
+        }
+    });
 
-    // load More nfunction
-    function loadMore() {
-      visibleCount += 6;
-      renderProducts();
-    }
+    changeTabRender(tab);
 
-    // اتصال رویداد به دکمه (دقیقاً با ID)  Bind the event to the button by ID.”
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', loadMore);
-    }
+}
 
-    //Run setup
+
+function loadMore() {
+    visibleCount += 6;
     renderProducts();
-
-/* <!-------------------------------------|AMIR HOSIAN|------------------------------------->*/
-
-/* <!-------------------------------------|ALI REZA|-------------------------------------> */
-
-/* <!-------------------------------------|FARZANE|-------------------------------------> */
-
-/* <!-------------------------------------|PARSA|-------------------------------------> */
+}
 
 
+const loadMoreBtn = document.getElementById('load-more-btn');
+if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', loadMore);
+}
 
+fetchProducts("latest");
