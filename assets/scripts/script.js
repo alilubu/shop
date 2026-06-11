@@ -79,26 +79,6 @@ function mapProduct(p) {
 
 
 function renderProducts() {
-    // let listToDisplay = [];
-
-    // if (currentTab === 'latest') {
-
-    //     listToDisplay = allProducts.slice(-6); 
-    // } else if (currentTab === 'saleoff') {
-
-    //     listToDisplay = allProducts.filter(p => p.price < 200);
-    // } else if (currentTab === 'bestsale') {
-
-    //     listToDisplay = [...allProducts]
-    //         .sort((a, b) => b.saleCount - a.saleCount)
-    //         .slice(0, 3);
-    // } else {
-
-    //     listToDisplay = allProducts;
-    // }
-
-
-    // const itemsToShow = listToDisplay.slice(0, visibleCount);
 
     const container = document.getElementById('products');
 
@@ -117,6 +97,7 @@ function renderProducts() {
         if (currentTab === 'latest') badgeHTML = '<span class="absolute top-2 left-2 bg-blue-500 text-white text-[10px] px-1 rounded z-10">NEW</span>';
 
         return `
+        <a href="./assets/pages/productdetail.html?id=${p.id}">
         <div class="relative group cursor-pointer">
           ${badgeHTML}
           <div class="bg-gray-50 rounded-lg overflow-hidden mb-2 flex items-center justify-center h-36">
@@ -127,7 +108,7 @@ function renderProducts() {
             <span class="text-sm font-bold text-gray-900">$${mappedData.price}.00</span>
             ${mappedData.old ? `<span class="text-xs text-gray-400 line-through">$${mappedData.old}.00</span>` : ''}
           </div>
-        </div>
+        </div></a>
       `;
     }).join('');
 
