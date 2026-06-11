@@ -326,4 +326,6 @@ async function renderDetailsPage(clickedCartId) {
 
 }
 
-renderDetailsPage(1005);
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+renderDetailsPage(id);
