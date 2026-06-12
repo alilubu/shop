@@ -1,191 +1,131 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
 
-  <body>
-    <!-- navbar -->
-    <nav
-      class="flex items-center justify-between px-6 py-3 border-b-2 text-xs text-gray-600 flex-wrap gap-2 border-t-2 sticky top-0 z-50 bg-white"
-    >
-      <div class="flex gap-4 flex-wrap">
-        <a href="#" class="font-bold text-orange-500">HOME</a>
-        <a href="#" class="font-sans font-bold hover:text-orange-500"
-          >FURNITURE</a
-        >
-        <a href="#" class="font-sans font-bold hover:text-orange-500"
-          >ALL PRODUCTS</a
-        >
-        <a href="#" class="font-sans font-bold hover:text-orange-500">SHOP</a>
-        <a href="#" class="font-sans font-bold hover:text-orange-500">MOBILE</a>
-        <a href="#" class="font-sans font-bold hover:text-orange-500">OFFER</a>
-        <a href="#" class="font-sans font-bold hover:text-orange-500">DEAL</a>
-        <a href="#" class="font-sans font-bold hover:text-orange-500">BLOG</a>
-        <a href="#" class="font-sans font-bold hover:text-orange-500"
-          >CONTACT US</a
-        >
-        <a href="#" class="font-sans font-bold hover:text-orange-500"
-          >CUSTOM MENU</a
-        >
-      </div>
-      <div class="flex items-center gap-3">
-        <span class="cursor-pointer mx-0.5"
-          ><svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            ></path></svg
-        ></span>
-        <span class="cursor-pointer"
-          ><svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-            ></path></svg
-        ></span>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-    <!-- product details -->
-    <div id="details--page"></div>
-    <!-- footer -->
-    <footer
-      class="bg-[#f7f7f6] grid grid-cols-2 grid-rows-3 gap-x-3 gap-y-6 p-3 justify-between lg:grid-cols-5 lg:grid-rows-1 lg:justify-evenly lg:p-4 lg:gap-4"
-    >
-      <div class="col-span-1 flex flex-col gap-2">
-        <p class="font-extrabold">CONTACT US</p>
-        <div class="flex flex-row gap-1 items-center">
-          <svg
-            class="bg-[#fefefe] border-2 p-1 border-[#c7c7c6] rounded-full"
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#1f1f1f"
-          >
-            <path
-              d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
-            />
-          </svg>
-          <p>888 South Aveneu, New York</p>
-        </div>
-        <div class="flex flex-row gap-1 items-center">
-          <svg
-            class="bg-[#fefefe] border-2 p-1 border-[#c7c7c6] rounded-full"
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#1f1f1f"
-          >
-            <path
-              d="M162-120q-18 0-30-12t-12-30v-162q0-13 9-23.5t23-14.5l138-28q14-2 28.5 2.5T342-374l94 94q38-22 72-48.5t65-57.5q33-32 60.5-66.5T681-524l-97-98q-8-8-11-19t-1-27l26-140q2-13 13-22.5t25-9.5h162q18 0 30 12t12 30q0 125-54.5 247T631-329Q531-229 409-174.5T162-120Zm556-480q17-39 26-79t14-81h-88l-18 94 66 66ZM360-244l-66-66-94 20v88q41-3 81-14t79-28Zm358-356ZM360-244Z"
-            />
-          </svg>
-          <div class="flex flex-col">
-            <p>(12) 123 4567</p>
-            <p>(12) 123 4567</p>
-          </div>
-        </div>
-        <div class="flex flex-row gap-1 items-center">
-          <svg
-            class="bg-[#fefefe] border-2 p-1 border-[#c7c7c6] rounded-full"
-            xmlns="http://www.w3.org/2000/svg"
-            height="32px"
-            viewBox="0 -960 960 960"
-            width="32px"
-            fill="#1f1f1f"
-          >
-            <path
-              d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
-            />
-          </svg>
-          <div class="flex flex-col">
-            <p>info@domain.com</p>
-            <p>info@domain.com</p>
-          </div>
+<body>
+  <!-- navbar -->
+  <nav
+    class="flex items-center justify-between px-6 py-3 border-b-2 text-xs text-gray-600 flex-wrap gap-2 border-t-2 sticky top-0 z-50 bg-white">
+    <div class="flex gap-4 flex-wrap">
+      <a href="#" class="font-bold text-orange-500">HOME</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">FURNITURE</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">ALL PRODUCTS</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">SHOP</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">MOBILE</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">OFFER</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">DEAL</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">BLOG</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">CONTACT US</a>
+      <a href="#" class="font-sans font-bold hover:text-orange-500">CUSTOM MENU</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="cursor-pointer mx-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg></span>
+      <span class="cursor-pointer"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+          </path>
+        </svg></span>
+    </div>
+  </nav>
+
+  <!-- product details -->
+  <div id="details--page"></div>
+  <!-- footer -->
+  <footer
+    class="bg-[#f7f7f6] grid grid-cols-2 grid-rows-3 gap-x-3 gap-y-6 p-3 justify-between lg:grid-cols-5 lg:grid-rows-1 lg:justify-evenly lg:p-4 lg:gap-4">
+    <div class="col-span-1 flex flex-col gap-2">
+      <p class="font-extrabold">CONTACT US</p>
+      <div class="flex flex-row gap-1 items-center">
+        <svg class="bg-[#fefefe] border-2 p-1 border-[#c7c7c6] rounded-full" xmlns="http://www.w3.org/2000/svg"
+          height="32px" viewBox="0 -960 960 960" width="32px" fill="#1f1f1f">
+          <path
+            d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+        </svg>
+        <p>888 South Aveneu, New York</p>
+      </div>
+      <div class="flex flex-row gap-1 items-center">
+        <svg class="bg-[#fefefe] border-2 p-1 border-[#c7c7c6] rounded-full" xmlns="http://www.w3.org/2000/svg"
+          height="32px" viewBox="0 -960 960 960" width="32px" fill="#1f1f1f">
+          <path
+            d="M162-120q-18 0-30-12t-12-30v-162q0-13 9-23.5t23-14.5l138-28q14-2 28.5 2.5T342-374l94 94q38-22 72-48.5t65-57.5q33-32 60.5-66.5T681-524l-97-98q-8-8-11-19t-1-27l26-140q2-13 13-22.5t25-9.5h162q18 0 30 12t12 30q0 125-54.5 247T631-329Q531-229 409-174.5T162-120Zm556-480q17-39 26-79t14-81h-88l-18 94 66 66ZM360-244l-66-66-94 20v88q41-3 81-14t79-28Zm358-356ZM360-244Z" />
+        </svg>
+        <div class="flex flex-col">
+          <p>(12) 123 4567</p>
+          <p>(12) 123 4567</p>
         </div>
       </div>
-      <div class="col-span-1 flex flex-col gap-2">
-        <p class="font-extrabold">SERVICE</p>
-        <p>Rices & currencies</p>
-        <p>Secure Payment</p>
-        <p>Delivery Times & Costs</p>
-        <p>Returns & Exchanges</p>
-        <p>FAQ's</p>
-      </div>
-      <div class="col-span-1 flex flex-col gap-2">
-        <p class="font-extrabold">ACCOUNT</p>
-        <p>My account</p>
-        <p>Wishlist</p>
-        <p>Order history</p>
-        <p>Specials</p>
-        <p>Gift vouchers</p>
-      </div>
-      <div class="col-span-1 flex flex-col gap-2">
-        <p class="font-extrabold">INFORMATION</p>
-        <p>My account</p>
-        <p>wishlist</p>
-        <p>Order history</p>
-        <p>Specials</p>
-        <p>Gift vouchers</p>
-      </div>
-      <div
-        class="col-span-2 flex flex-col gap-2 md:gap-4 lg:gap-4 lg:col-span-1 items-center lg:items-start"
-      >
-        <p class="font-extrabold">NEWS LETTER</p>
-        <p>Register your email for news</p>
-        <input
-          class="w-7/12 lg:w-full lg:p-2"
-          type="email"
-          placeholder="Your email address:"
-        />
-        <button class="p-2 bg-[#000000] text-[#fefefe]">SUBSCRIBE</button>
-      </div>
-    </footer>
-
-    <!--  Modal  -->
-    <div
-      id="cart-modal"
-      class="fixed right-0 top-16 max-h-[85vh] w-[320px] bg-white shadow-xl p-6 hidden flex flex-col z-50"
-    >
-      <div id="cart-items" class="flex-grow overflow-y-auto pr-2"></div>
-
-      <div class="py-4 mt-2 text-right">
-        <span class="text-gray-600">Total: </span>
-        <span id="cart-total" class="text-xl font-extrabold text-gray-900"
-          >$ 0.00</span
-        >
-      </div>
-
-      <div class="pt-2 border-t border-gray-200">
-        <button
-          id="checkout-btn"
-          class="w-full border-2 border-black py-3 text-black font-semibold uppercase tracking-wide hover:bg-black hover:text-white transition-all"
-        >
-          CHECK OUT
-        </button>
+      <div class="flex flex-row gap-1 items-center">
+        <svg class="bg-[#fefefe] border-2 p-1 border-[#c7c7c6] rounded-full" xmlns="http://www.w3.org/2000/svg"
+          height="32px" viewBox="0 -960 960 960" width="32px" fill="#1f1f1f">
+          <path
+            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+        </svg>
+        <div class="flex flex-col">
+          <p>info@domain.com</p>
+          <p>info@domain.com</p>
+        </div>
       </div>
     </div>
+    <div class="col-span-1 flex flex-col gap-2">
+      <p class="font-extrabold">SERVICE</p>
+      <p>Rices & currencies</p>
+      <p>Secure Payment</p>
+      <p>Delivery Times & Costs</p>
+      <p>Returns & Exchanges</p>
+      <p>FAQ's</p>
+    </div>
+    <div class="col-span-1 flex flex-col gap-2">
+      <p class="font-extrabold">ACCOUNT</p>
+      <p>My account</p>
+      <p>Wishlist</p>
+      <p>Order history</p>
+      <p>Specials</p>
+      <p>Gift vouchers</p>
+    </div>
+    <div class="col-span-1 flex flex-col gap-2">
+      <p class="font-extrabold">INFORMATION</p>
+      <p>My account</p>
+      <p>wishlist</p>
+      <p>Order history</p>
+      <p>Specials</p>
+      <p>Gift vouchers</p>
+    </div>
+    <div class="col-span-2 flex flex-col gap-2 md:gap-4 lg:gap-4 lg:col-span-1 items-center lg:items-start">
+      <p class="font-extrabold">NEWS LETTER</p>
+      <p>Register your email for news</p>
+      <input class="w-7/12 lg:w-full lg:p-2" type="email" placeholder="Your email address:" />
+      <button class="p-2 bg-[#000000] text-[#fefefe]">SUBSCRIBE</button>
+    </div>
+  </footer>
 
-    <script src="../scripts/detail-script.js"></script>
-  </body>
+  <!--  Modal  -->
+  <div id="cart-modal"
+    class="fixed right-0 top-16 max-h-[85vh] w-[320px] bg-white shadow-xl p-6 hidden flex flex-col z-50">
+    <div id="cart-items" class="flex-grow overflow-y-auto pr-2"></div>
+
+    <div class="py-4 mt-2 text-right">
+      <span class="text-gray-600">Total: </span>
+      <span id="cart-total" class="text-xl font-extrabold text-gray-900">$ 0.00</span>
+    </div>
+
+    <div class="pt-2 border-t border-gray-200">
+      <button id="checkout-btn"
+        class="w-full border-2 border-black py-3 text-black font-semibold uppercase tracking-wide hover:bg-black hover:text-white transition-all">
+        CHECK OUT
+      </button>
+    </div>
+  </div>
+
+  <script src="../scripts/detail-script.js"></script>
+</body>
+
 </html>

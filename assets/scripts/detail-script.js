@@ -2,7 +2,7 @@ const detailsPage = document.querySelector("#details--page");
 
 // rating stars coloring
 async function displayRatingStars(clickedCartId) {
-  const filledColor = "gold";
+  const filledColor = "#ffea00";
   const emptyColor = "#ccc";
   const response = await fetch(
     `http://localhost:3000/products/${clickedCartId}`,
@@ -26,11 +26,12 @@ function updateCart(productData, change) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   let index = cart.findIndex((item) => item.id === productData.id);
+   // اگه موجود بود
   if (index !== -1) {
     let newCount = cart[index].itemCount + change;
     if (newCount >= 1 && newCount <= 10) {
       cart[index].itemCount = newCount;
-    }
+    } // اگه موجود نبود
   } else if (change > 0) {
     cart.push({
       id: productData.id,
@@ -164,7 +165,7 @@ async function renderDetailsPage(clickedCartId) {
                                         class="border-2 border-[#e5e7eb] px-3 py-1 font-semibold text-2xl  hover:bg-[#000000] hover:border-[#000000] hover:text-[#fefefe]">+</span>
                                 </div>
                             </div>
-                            <button
+                            <button id="add-to-cart-btn"
                                 class=" min-w-min border-2 border-[#e5e7eb] px-5 py-2 text-l font-bold hover:bg-[#000000] hover:border-[#000000] hover:text-[#fefefe]">ADD
                                 TO CART</button>
                         </div>
@@ -231,6 +232,7 @@ async function renderDetailsPage(clickedCartId) {
   const countInCart = document.querySelector("#count--inCart");
   const minusBtn = document.querySelector("#minus-btn");
   const plusBtn = document.querySelector("#plus-btn");
+  const AddToCartBtn = document.querySelector("#add-to-cart-btn");
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let item = cart.find((i) => i.id === productData.id);
   countInCart.innerHTML = item ? item.itemCount : 0;
@@ -245,6 +247,12 @@ async function renderDetailsPage(clickedCartId) {
     const item = cart.find((i) => i.id === productData.id);
     countInCart.innerHTML = item.itemCount;
   });
+   AddToCartBtn.addEventListener("click", () => {
+   const cart = plusButton(productData);
+    const item = cart.find((i) => i.id === productData.id);
+    countInCart.innerHTML = item.itemCount;
+  });
+
 
   // handel table text
   //reviews
