@@ -328,3 +328,215 @@ left.onclick = function () {
 };
 
 fetchProducts("latest");
+
+/* <!-------------------------------------|ALI REZA|-------------------------------------> */
+// Most view
+
+let filteredForMostView = [];
+let mostViewIndex = 0;
+const mostViewVisible = 8;
+
+async function mostViewSlider() {
+  const res = await fetch("http://localhost:3000/products?viewCount_gte=1500");
+  filteredForMostView = await res.json();
+  mostViewRender();
+}
+
+function mostViewRender() {
+  const mostViewSlider = document.getElementById("most-viewed-slider");
+  if (!mostViewSlider) return;
+
+  const mostViewSliderItems = filteredForMostView.slice(
+    mostViewIndex,
+    mostViewIndex + mostViewVisible,
+  );
+
+  mostViewSlider.innerHTML = mostViewSliderItems
+    .map(
+      (p) => `
+    <div class="flex items-center p-2 border rounded-lg">
+      <a href="assets/pages/productdetail.html?id=${p.id}"><img src="${p.image}" alt="${p.title}" class="w-2/5 object-cover"></a>
+      <div class="flex flex-col ml-2 gap-y-1">
+        <p class="font-bold text-sm">${p.title}</p>
+        <div>
+          <span class="text-14 font-bold font-sans">$${p.price}</span>
+        </div>
+        <div class="flex items-center gap-1 cursor-pointer text-gray-500 hover:text-blue-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 5h14M10 21a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z"/>
+          </svg>
+          <a href="assets/pages/cart.html?id=${p.id}"><p class="text-xs">Add to cart</p></a>
+        </div>
+      </div>
+    </div>
+  `,
+    )
+    .join("");
+}
+
+function move(direction) {
+  const maxIndex = Math.max(0, filteredForMostView.length - mostViewVisible);
+
+  mostViewIndex = Math.max(0, Math.min(mostViewIndex + direction, maxIndex));
+
+  mostViewRender();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const leftBtn = document.getElementById("most-slider-left-btn");
+  const rightBtn = document.getElementById("most-slider-right-btn");
+
+  if (leftBtn) leftBtn.addEventListener("click", () => move(-1));
+  if (rightBtn) rightBtn.addEventListener("click", () => move(1));
+
+  mostViewSlider();
+});
+
+// Latest Post
+// let allLatestPosts = [];
+// let latestPostIndex = 0;
+
+// function getVisible() {
+//   if (window.innerWidth >= 768 && window.innerWidth < 1024) return 4;
+//    return 3;
+// }
+
+// async function latestPostsSlider() {
+//   const res = await fetch(
+//     "http://localhost:3000/products?_sort=-createDate&_page=1&_per_page=6",
+//   );
+//   const data = await res.json();
+//   allLatestPosts = data?.data || [];
+//   renderLatestPosts();
+// }
+
+// function renderLatestPosts() {
+//   const VISIBLE = getVisible();
+//   const container = document.getElementById("latest-post-container");
+//   const posts = allLatestPosts.slice(
+//     latestPostIndex,
+//     latestPostIndex + VISIBLE,
+//   );
+
+//   container.innerHTML = posts
+//     .map((post) => {
+//       const date = new Date(post.createDate);
+//       const day = String(date.getDate()).padStart(2, "0");
+//       const month = date
+//         .toLocaleString("en-US", { month: "short" })
+//         .toUpperCase();
+
+//       return `
+//       <div class="flex flex-col justify-center max-w-[550px]">
+//         <a href="assets/pages/productdetail.html?id=${post.id}">
+//           <img src="${post.image}" class="max-w-[350px] min-h-[420px]" alt=""></a>
+//         <div class="flex mt-1">
+//           <div class="border p-2 max-w-fit max-h-fit">
+//             <p class="font-bold text-center">${day}</p>
+//             <p>${month}</p>
+//           </div>
+//           <div class="ml-2 gap-5">
+//             <p class="text-red-500 text-xs font-bold">${post.category}</p>
+//             <p class="text-sm text-black font-bold">${post.title}</p>
+//             <p class="text-sm text-gray-500 max-w-[305px]">${post.description}</p>
+//           </div>
+//         </div>
+//       </div>`;
+//     })
+//     .join("");
+// }
+
+// document.getElementById("latest-slider-right").addEventListener("click", () => {
+//   const VISIBLE = getVisible();
+//   if (latestPostIndex + VISIBLE < allLatestPosts.length) {
+//     latestPostIndex += VISIBLE;
+//     renderLatestPosts();
+//   }
+// });
+
+// document.getElementById("latest-slider-left").addEventListener("click", () => {
+//   const VISIBLE = getVisible();
+//   if (latestPostIndex - VISIBLE >= 0) {
+//     latestPostIndex -= VISIBLE;
+//     renderLatestPosts();
+//   }
+// });
+
+// latestPostsSlider();
+
+let allLatestPosts = [];
+let latestPostIndex = 0;
+
+function getVisible() {
+  if (window.innerWidth >= 768 && window.innerWidth < 1024) return 4;
+  return 3;
+}
+
+async function latestPostsSlider() {
+  const res = await fetch(
+    "http://localhost:3000/products?_sort=-createDate&_page=1&_per_page=6",
+  );
+  const data = await res.json();
+  allLatestPosts = data?.data || [];
+  renderLatestPosts();
+}
+
+function renderLatestPosts() {
+  const VISIBLE = getVisible();
+  const container = document.getElementById("latest-post-container");
+  const posts = allLatestPosts.slice(
+    latestPostIndex,
+    latestPostIndex + VISIBLE,
+  );
+
+  container.innerHTML = posts
+    .map((post) => {
+      const date = new Date(post.createDate);
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = date
+        .toLocaleString("en-US", { month: "short" })
+        .toUpperCase();
+
+      return `
+      <div class="flex flex-col">
+        <a href="assets/pages/productdetail.html?id=${post.id}">
+          <img src="${post.image}" class="w-full object-cover max-h-[420px]" alt=""></a>
+        <div class="flex mt-1">
+          <div class="border p-2 max-w-fit max-h-fit">
+            <p class="font-bold text-center">${day}</p>
+            <p>${month}</p>
+          </div>
+          <div class="ml-2">
+            <p class="text-red-500 text-xs font-bold">${post.category}</p>
+            <p class="text-sm text-black font-bold">${post.title}</p>
+            <p class="text-sm text-gray-500">${post.description}</p>
+          </div>
+        </div>
+      </div>`;
+    })
+    .join("");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("latest-slider-right")
+    .addEventListener("click", () => {
+      const VISIBLE = getVisible();
+      if (latestPostIndex + VISIBLE < allLatestPosts.length) {
+        latestPostIndex += VISIBLE;
+        renderLatestPosts();
+      }
+    });
+
+  document
+    .getElementById("latest-slider-left")
+    .addEventListener("click", () => {
+      const VISIBLE = getVisible();
+      if (latestPostIndex - VISIBLE >= 0) {
+        latestPostIndex -= VISIBLE;
+        renderLatestPosts();
+      }
+    });
+
+  latestPostsSlider();
+});
